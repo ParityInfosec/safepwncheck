@@ -47,7 +47,7 @@ def main(args):
         with open(args.pwfile) as fin:
             for line in fin:
                 checkpw(line.rstrip('\n'))
-
+    print('\n')
 if __name__ == "__main__":
     print(header())
     parser = argparse.ArgumentParser()
