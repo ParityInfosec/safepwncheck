@@ -13,7 +13,8 @@ sha1_b=${sha1:5:40}
 sha1list=$(wget -q -O - https://api.pwnedpasswords.com/range/$sha1_a) 
 
 # Does our password's 35 character SHA1 chunk match any in the list? 
-echo $sha1list | grep --ignore-case --quiet $sha1_b rc=$? 
+echo $sha1list | grep --ignore-case --quiet $sha1_b 
+rc=$? 
 
 if [ $rc -eq 0 ]; then     
     echo "\"$password\" has been pwned! Do not use!" 
